@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.service.MemberServie;
+import com.vo.MemberVo;
 
 @Controller
 public class MemberController {
@@ -15,9 +16,9 @@ public class MemberController {
 	
 	@RequestMapping("searchMember.do")
 	public String searchMember(Model model,String name) {
-		String userName = memberService.searchMember(name);
+		MemberVo member = memberService.searchMember(name);
 		
-		model.addAttribute("username", userName);
+		model.addAttribute("member", member);
 		
 		return "members/searchMember";
 	}
