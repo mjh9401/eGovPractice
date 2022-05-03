@@ -6,21 +6,34 @@ import org.springframework.stereotype.Service;
 
 import com.vo.MemberVo;
 
+
 @Service
 public class MemberServie {
 	
-	public MemberVo searchMember(String name) {
+	public ArrayList<MemberVo> searchMember(String searchKeyWord) {
 		
 		ArrayList<MemberVo> members = new ArrayList<>();
 		members = new MemberVo().memberLists();
-		MemberVo searchMember = new MemberVo();
+		ArrayList<MemberVo> searchMember = new ArrayList<>();
 		
-		for(MemberVo member : members) {
+
+		
+		for(MemberVo member : members) {			
 			String memberName = member.getName();
+			String memberAddress = member.getAddress();
+			String memberEmadil = member.getEmail();
+			String memberTel = member.getTel();
 			
-			if(memberName.equals(name)) {
-				searchMember = member;
+			if(memberName.equals(searchKeyWord)) {
+				searchMember.add(member);
+			} else if(memberAddress.equals(searchKeyWord)) {
+				searchMember.add(member);
+			} else if (memberEmadil.equals(searchKeyWord)) {
+				searchMember.add(member);
+			} else if (memberTel.equals(searchKeyWord)) {
+				searchMember.add(member);
 			}
+			
 		}
 		
 		return searchMember;
