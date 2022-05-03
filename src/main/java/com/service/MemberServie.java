@@ -24,13 +24,13 @@ public class MemberServie {
 			String memberEmadil = member.getEmail();
 			String memberTel = member.getTel();
 			
-			if(memberName.equals(searchKeyWord)) {
+			if(memberName.contains(searchKeyWord)) {
 				searchMember.add(member);
-			} else if(memberAddress.equals(searchKeyWord)) {
+			} else if(memberAddress.contains(searchKeyWord)) {
 				searchMember.add(member);
-			} else if (memberEmadil.equals(searchKeyWord)) {
+			} else if (memberEmadil.contains(searchKeyWord)) {
 				searchMember.add(member);
-			} else if (memberTel.equals(searchKeyWord)) {
+			} else if (memberTel.contains(searchKeyWord)) {
 				searchMember.add(member);
 			}
 			
