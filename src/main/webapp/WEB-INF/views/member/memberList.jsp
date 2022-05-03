@@ -60,7 +60,6 @@
 					alert("검색결과가 없습니다.");
 					history.back();
 				</script>
-				<h1>검색결과가 없습니다.</h1>
 			</c:when>
 		</c:choose>
 	</div>

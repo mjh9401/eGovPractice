@@ -17,11 +17,7 @@
 	}
 	select{
 		width: 100px;
-<<<<<<< HEAD
 		height: 35px;
-=======
-		height: 30px;
->>>>>>> 861373587bc109ea51b1b6fc84aa760efd413d5a
 		margin-left: 100px;
 	}
 	.searchbar{
