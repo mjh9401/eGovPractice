@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>직원검색결과</title>
 </head>
 <style>
 	.wrap{
@@ -56,12 +56,16 @@
 				</table>
 			</c:when>
 			<c:when test="${empty members}">
-				<script>
-					alert("검색결과가 없습니다.");
-					history.back();
-				</script>
+				<c:set var="memberEmpty" value="true"/>
 			</c:when>
 		</c:choose>
 	</div>
+	<script>
+		let status = '<c:out value="${memberEmpty}"/>';
+		if(status){
+			alert("검색결과가 없습니다.");
+			history.back();	
+		}
+	</script>
 </body>
 </html>
